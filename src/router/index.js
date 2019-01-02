@@ -14,8 +14,8 @@ export default new Router({
       path: '/',
       name: 'Chat',
       component: Chat,
-      beforeEnter (to, from, next) {
-        authCheck(store, next, to)
+      async beforeEnter (to, from, next) {
+        await authCheck(store, next, to)
         next()
       }
     },

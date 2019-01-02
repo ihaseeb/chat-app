@@ -63,5 +63,6 @@ export default {
 }
 .main{
   background: #ECEFF1;
+  scroll-behavior: smooth;
 }
 </style>

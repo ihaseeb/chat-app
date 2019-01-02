@@ -12,7 +12,6 @@ let config = {
   projectId: 'muskeeters-group',
   messagingSenderId: '395376972000'
 }
-// firebase.initializeApp(config)
 export default !firebase.apps.length
   ? firebase.initializeApp(config)
   : firebase.app()

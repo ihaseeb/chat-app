@@ -141,8 +141,8 @@ export default {
         console.log(error)
       })
     },
-    autoSignIn ({ commit }, payload) {
-      return fireStore.collection('users').doc(payload.uid).get()
+    async autoSignIn ({ commit }, payload) {
+      const userSignin = await fireStore.collection('users').doc(payload.uid).get()
       .then(doc => {
         if (doc.exists) {
           const userData = {
@@ -162,6 +162,7 @@ export default {
         commit('setError', errorUserData)
         console.log(`[ERROR]: An error occured fetching the user data from the server: ${errorUserData}`)
       })
+      return userSignin
     },
     // fetchUserData ({ commit, getters }) {
     //   commit('setLoading', true)
